@@ -1,10 +1,7 @@
-package com.challenge.api.service;
-import com.challenge.api.model.Employee;
-
-import java.util.UUID;
+package com.challenge.api.model;
 
 import java.time.Instant;
-
+import java.util.UUID;
 import org.springframework.stereotype.Service;
 
 // Could also probably use a java record here
@@ -13,7 +10,8 @@ public class EmployeeImpl implements Employee {
     private UUID uuid;
     private String firstName;
     private String lastName;
-    // Assuming here that fullName is a separate field, otherwise have to do string splitting to get first and last names.
+    // Assuming here that fullName is a separate field, otherwise have to do string splitting to get first and last
+    // names.
     private String fullName;
     private Integer salary;
     private Integer age;
@@ -22,11 +20,19 @@ public class EmployeeImpl implements Employee {
     private Instant contractHireDate;
     private Instant contractTerminationDate;
 
-    public EmployeeImpl(){
-    }
+    public EmployeeImpl() {}
 
-    public EmployeeImpl(UUID uuid, String firstName, String lastName, String fullName, Integer salary, Integer age, String jobTitle, String email, Instant contractHireDate, Instant contractTerminationDate){
-        this.uuid = uuid;
+    public EmployeeImpl(
+            String firstName,
+            String lastName,
+            String fullName,
+            Integer salary,
+            Integer age,
+            String jobTitle,
+            String email,
+            Instant contractHireDate,
+            Instant contractTerminationDate) {
+        this.uuid = UUID.randomUUID();
         this.firstName = firstName;
         this.lastName = lastName;
         this.fullName = fullName;
@@ -39,92 +45,92 @@ public class EmployeeImpl implements Employee {
     }
 
     @Override
-    public UUID getUuid(){
+    public UUID getUuid() {
         return this.uuid;
     }
 
     @Override
-    public void setUuid(UUID uuid){
+    public void setUuid(UUID uuid) {
         this.uuid = uuid;
     }
 
     @Override
-    public String getFirstName(){
+    public String getFirstName() {
         return this.firstName;
     }
 
     @Override
-    public void setFirstName(String name){
+    public void setFirstName(String name) {
         this.firstName = name;
     }
 
     @Override
-    public String getLastName(){
+    public String getLastName() {
         return this.lastName;
     }
 
     @Override
-    public void setLastName(String name){
+    public void setLastName(String name) {
         this.lastName = name;
     }
 
     @Override
-    public String getFullName(){
+    public String getFullName() {
         return this.fullName;
     }
 
     @Override
-    public void setFullName(String name){
+    public void setFullName(String name) {
         this.fullName = name;
     }
 
     @Override
-    public Integer getSalary(){
+    public Integer getSalary() {
         return this.salary;
     }
 
     @Override
-    public void setSalary(Integer salary){
+    public void setSalary(Integer salary) {
         this.salary = salary;
     }
 
     @Override
-    public Integer getAge(){
+    public Integer getAge() {
         return this.age;
     }
 
     @Override
-    public void setAge(Integer age){
+    public void setAge(Integer age) {
         this.age = age;
     }
 
     @Override
-    public String getJobTitle(){
+    public String getJobTitle() {
         return this.jobTitle;
     }
 
     @Override
-    public void setJobTitle(String jobTitle){
+    public void setJobTitle(String jobTitle) {
         this.jobTitle = jobTitle;
     }
 
     @Override
-    public String getEmail(){
+    public String getEmail() {
         return this.email;
     }
 
     @Override
-    public void setEmail(String email){
+    public void setEmail(String email) {
         this.email = email;
     }
 
     @Override
-    public Instant getContractHireDate(){
+    public Instant getContractHireDate() {
         return this.contractHireDate;
     }
 
     @Override
-    public void setContractHireDate(Instant date){
+    public void setContractHireDate(Instant date) {
         this.contractHireDate = date;
     }
 
@@ -132,11 +138,11 @@ public class EmployeeImpl implements Employee {
      * Nullable.
      * @return null, if Employee has not been terminated.
      */
-    public Instant getContractTerminationDate(){
+    public Instant getContractTerminationDate() {
         return this.contractTerminationDate;
     }
 
-    public void setContractTerminationDate(Instant date){
+    public void setContractTerminationDate(Instant date) {
         this.contractTerminationDate = date;
     }
 }
