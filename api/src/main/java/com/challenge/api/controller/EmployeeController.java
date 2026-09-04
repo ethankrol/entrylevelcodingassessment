@@ -1,13 +1,15 @@
 package com.challenge.api.controller;
 
-import com.challenge.api.EmployeeService;
 import com.challenge.api.model.Employee;
 import com.challenge.api.model.EmployeeImpl;
+import com.challenge.api.service.EmployeeService;
+
 import java.util.List;
 import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -40,7 +42,7 @@ public class EmployeeController {
      * @param uuid Employee UUID
      * @return Requested Employee if exists
      */
-    @GetMapping("/{uuid}")
+    @GetMapping("uuid")
     public Employee getEmployeeByUuid(UUID uuid) {
         return this.employeeService.getEmployeeByUuid(uuid);
     }
@@ -50,8 +52,9 @@ public class EmployeeController {
      * @param requestBody hint!
      * @return Newly created Employee
      */
+    
     @PostMapping
-    public Employee createEmployee(EmployeeImpl requestBody) {
+    public Employee createEmployee(@RequestBody EmployeeImpl requestBody) {
         return employeeService.createEmployee(requestBody);
     }
 }

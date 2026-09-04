@@ -2,10 +2,8 @@ package com.challenge.api.model;
 
 import java.time.Instant;
 import java.util.UUID;
-import org.springframework.stereotype.Service;
 
 // Could also probably use a java record here
-@Service
 public class EmployeeImpl implements Employee {
     private UUID uuid;
     private String firstName;
@@ -138,10 +136,12 @@ public class EmployeeImpl implements Employee {
      * Nullable.
      * @return null, if Employee has not been terminated.
      */
+    @Override
     public Instant getContractTerminationDate() {
         return this.contractTerminationDate;
     }
 
+    @Override
     public void setContractTerminationDate(Instant date) {
         this.contractTerminationDate = date;
     }
