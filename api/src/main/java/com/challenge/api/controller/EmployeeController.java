@@ -41,7 +41,7 @@ public class EmployeeController {
      * @param uuid Employee UUID
      * @return Requested Employee if exists
      */
-    @GetMapping("uuid")
+    @GetMapping("/{uuid}")
     public Employee getEmployeeByUuid(UUID uuid) {
         return this.employeeService.getEmployeeByUuid(uuid);
     }
