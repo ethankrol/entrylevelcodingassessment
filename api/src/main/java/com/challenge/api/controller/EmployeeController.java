@@ -3,7 +3,6 @@ package com.challenge.api.controller;
 import com.challenge.api.model.Employee;
 import com.challenge.api.model.EmployeeImpl;
 import com.challenge.api.service.EmployeeService;
-
 import java.util.List;
 import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,7 +51,6 @@ public class EmployeeController {
      * @param requestBody hint!
      * @return Newly created Employee
      */
-    
     @PostMapping
     public Employee createEmployee(@RequestBody EmployeeImpl requestBody) {
         return employeeService.createEmployee(requestBody);
